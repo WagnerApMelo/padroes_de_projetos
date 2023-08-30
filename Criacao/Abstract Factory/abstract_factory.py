@@ -16,6 +16,9 @@ class VeiculoLuxo(ABC):
     @abstractmethod
     def buscar_cliente(self) -> None: pass
 
+    @abstractmethod
+    def servir_agua(self) -> None: pass
+
 
 class VeiculoPopular(ABC):
     @abstractmethod
@@ -26,6 +29,8 @@ class CarroLuxoZN(VeiculoLuxo):
     def buscar_cliente(self) -> None:
         print('Carro de luxo ZN está buscando o cliente...')
 
+    def servir_agua(self) -> None:
+        print("Servir água ao passageiro")
 
 class CarroPopularZN(VeiculoPopular):
     def buscar_cliente(self) -> None:
@@ -36,6 +41,8 @@ class MotoLuxoZN(VeiculoLuxo):
     def buscar_cliente(self) -> None:
         print('Moto de luxo ZN está buscando o cliente...')
 
+    def servir_agua(self) -> None:
+        print("Servir água ao passageiro")
 
 class MotoPopularZN(VeiculoPopular):
     def buscar_cliente(self) -> None:
@@ -46,6 +53,8 @@ class CarroLuxoZS(VeiculoLuxo):
     def buscar_cliente(self) -> None:
         print('Carro de luxo ZS está buscando o cliente...')
 
+    def servir_agua(self) -> None:
+        print("Servir água ao passageiro")
 
 class CarroPopularZS(VeiculoPopular):
     def buscar_cliente(self) -> None:
@@ -56,6 +65,8 @@ class MotoLuxoZS(VeiculoLuxo):
     def buscar_cliente(self) -> None:
         print('Moto de luxo ZS está buscando o cliente...')
 
+    def servir_agua(self) -> None:
+        print("Servir água ao passageiro")
 
 class MotoPopularZS(VeiculoPopular):
     def buscar_cliente(self) -> None:
@@ -133,5 +144,11 @@ class Cliente:
 
 
 if __name__ == "__main__":
+
+    factory = ZonaNorteVeiculoFactory()
+    carro_luxo = factory.get_carro_luxo()
+    carro_luxo.buscar_cliente()
+    carro_luxo.servir_agua()
+
     cliente = Cliente()
     cliente.buscar_clientes()
